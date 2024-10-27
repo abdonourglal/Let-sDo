@@ -1,0 +1,75 @@
+<div class="add-task-container">
+  <div class="add-task-group">
+    <div class="add-task-text">
+      <i class="bi bi-plus plus-icon"></i>
+      <input
+        class="task-text-input"
+        type="text"
+        placeholder="Add task"
+        [(ngModel)]="newTask"
+      />
+    </div>
+    <div class="add-task-data">
+      <div class="task-date-picker">
+        <!-- ///////////////////////////// -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Due</mat-label>
+          <mat-select
+            [(ngModel)]="selectedOption"
+            (selectionChange)="onDateChange($event)"
+          >
+            <mat-option value="today">
+              <div class="date-options">
+                <div>Today</div>
+                <div>({{ todayDate | date : "EEE" }})</div>
+              </div>
+            </mat-option>
+            <mat-option value="tomorrow">
+              <div class="date-options">
+                <div>Tomorrow</div>
+                <div>({{ tomorrowDate | date : "EEE" }})</div>
+              </div>
+            </mat-option>
+            <mat-option value="nextWeek">
+              Next Week ({{ nextWeekDate | date : "EEE" }})
+            </mat-option>
+
+            <mat-option value="">
+              <span *ngIf="selectedDate">{{
+                selectedDate | date : "EEE, MMM d"
+              }}</span>
+
+              <input
+                matInput
+                [matDatepicker]="picker"
+                [(ngModel)]="selectedDate"
+                (dateChange)="onDateChange({ value: 'pickDay' })"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- //////////////////////////// -->
+      </div>
+      <div class="priorty">
+        <mat-form-field appearance="outline">
+          <mat-label>priorty</mat-label>
+          <mat-select [(ngModel)]="priority">
+            <mat-option value="High">High</mat-option>
+            <mat-option value="Medium">Medium</mat-option>
+            <mat-option value="Low">Low</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button mat-flat-button (click)="addTask()">add</button>
+    </div>
+  </div>
+</div>
+
+<div></div>

@@ -1,0 +1,39 @@
+<!-- <app-create-task (taskCreated)="onTaskCreated($event)"></app-create-task> -->
+<div *ngIf="tasks.length > 0; else noTasks">
+  <div class="task-list" *ngFor="let task of tasks">
+    <div class="list-item">
+      <div class="check-finish">
+        <i
+          [ngClass]="!complet ? 'bi bi-circle' : 'bi bi-check-circle-fill'"
+          (click)="change()"
+        ></i>
+      </div>
+    </div>
+    <div class="task-name-date">
+      <span>{{ task.name }}</span>
+      <div class="task-genre">
+        <span> <span>Tasks</span> • 📅</span>
+        <span> {{ task.due | date : "shortDate" }}</span>
+        <span *ngIf="task.priority == 'High'">
+          <span *ngIf="task.priority == 'High'"> 🔥 </span>
+          {{ task.priority }}</span
+        >
+      </div>
+    </div>
+    <div class="important-task">
+      <i
+        [ngClass]="
+          task.important
+            ? 'bi bi-star-fill text-primary'
+            : 'bi bi-star text-muted'
+        "
+        (click)="MakeItImportant(task)"
+      ></i>
+      <span class="tooltip-text">Mark Task as important</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #noTasks>
+  <p>No tasks available. Please create a task.</p>
+</ng-template>

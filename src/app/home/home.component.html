@@ -1,0 +1,5 @@
+<app-create-task (taskCreated)="onTaskCreated($event)"></app-create-task>
+<app-tasks-list
+  [tasks]="tasks"
+  (emitData)="onImportantStatusChanged()"
+></app-tasks-list>

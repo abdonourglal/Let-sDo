@@ -1,0 +1,12 @@
+<p [class.text-danger]="false" [style.width]="width">{{ text }}</p>
+<p [ngClass]="setOFClass">this is Binding Many Classes</p>
+<button (click)="PrintFromModel()">click HEre</button>
+<p>{{ messge }}</p>
+<p [ngClass]="isSpicial ? 'spicial' : ''">this is spicial</p>
+<div [ngSwitch]="car">
+  <p *ngSwitchCase="'LOGAN'">Lgan</p>
+  <p *ngSwitchCase="'KIA'">KIA</p>
+  <p *ngSwitchDefault>this is Dfualt Car</p>
+</div>
+<h1>{{ childData }}</h1>
+<button (click)="sendDataToParnet()">Send To Parrent</button>

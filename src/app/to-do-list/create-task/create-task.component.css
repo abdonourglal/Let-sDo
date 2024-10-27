@@ -1,0 +1,50 @@
+.add-task-container {
+  margin: 0%;
+}
+.add-task-group {
+}
+.add-task-data {
+  margin-top: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-date-picker {
+  justify-content: center;
+  align-items: center;
+}
+.add-task-text {
+  display: flex;
+  min-height: 52px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.task-text-input {
+  padding: 16px 14px;
+  width: 90%;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  outline: none;
+}
+.task-text-input:hover {
+  border: none;
+  outline: none;
+}
+
+.plus-icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 29px;
+
+  padding-left: 5px;
+  cursor: pointer;
+}
+/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+.date-options {
+  display: flex;
+  justify-content: space-between;
+}
